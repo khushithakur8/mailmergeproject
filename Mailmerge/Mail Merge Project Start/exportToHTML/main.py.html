@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #6a8759;}
+.s2 { color: #cc7832;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">placeholder = </span><span class="s1">&quot;[name]&quot;</span>
+
+<span class="s2">with </span><span class="s0">open(</span><span class="s1">&quot;./Input/Names/invited_names.txt&quot;</span><span class="s0">) </span><span class="s2">as </span><span class="s0">file:</span>
+    <span class="s0">names = file.readlines()</span>
+
+<span class="s2">with </span><span class="s0">open(</span><span class="s1">&quot;./Input/Letters/starting_letter.txt&quot;</span><span class="s0">) </span><span class="s2">as </span><span class="s0">letter_file:</span>
+    <span class="s0">letter_content = letter_file.read()</span>
+    <span class="s2">for </span><span class="s0">name </span><span class="s2">in </span><span class="s0">names:</span>
+        <span class="s0">stripped_name = name.strip()</span>
+        <span class="s0">new_letter = letter_content.replace(placeholder</span><span class="s2">, </span><span class="s0">stripped_name)</span>
+        <span class="s2">with </span><span class="s0">open(</span><span class="s1">f&quot;./Output/ReadyToSend/letter_for_</span><span class="s2">{</span><span class="s0">stripped_name</span><span class="s2">}</span><span class="s1">.txt&quot;</span><span class="s2">, </span><span class="s0">mode=</span><span class="s1">&quot;w&quot;</span><span class="s0">) </span><span class="s2">as </span><span class="s0">complete_letter:</span>
+            <span class="s0">complete_letter.write(new_letter)</span></pre>
+</body>
+</html>
